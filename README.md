@@ -7,3 +7,7 @@ Some things to keep in mind:
 - You need Chrome installed on your PC/Server
 - IUSR (or Everyone) needs full permissions on Chrome.exe file
 - You have to create a folder on your system where Chrome stores logs/debugs - make sure to give IUSR permissions too
+
+I installed this script on a Windows 2019 (Amazon AWS) & 2022 (Azure) Server (Datacenter edition) and on a local IIS8 (Windows 10). 
+
+The default page is "default.asp". This script takes 
