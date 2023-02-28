@@ -88,6 +88,8 @@ dim url : url="http://localhost"
 dim data : data="pw=XXXXXX"
 data=data & "&filename=export"
 data=data & "&filetype=jpg"
+data=data & "&width=1024"
+data=data & "&height=768"
 data=data & "&url=" & server.urlencode("https://www.google.com")
 
 dim oXMLHTTP : set oXMLHTTP = Server.CreateObject("Msxml2.ServerXMLHTTP")
