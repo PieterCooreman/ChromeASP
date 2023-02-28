@@ -10,9 +10,11 @@ This script will most likely not work on any shared hosting environment. It will
 - IUSR (or Everyone) needs full permissions on Chrome.exe file
 - You have to create a folder on your system where Chrome stores logs/debugs - make sure to give IUSR permissions too
 - Requires aspLite, a light-weight framework for ASP/VBScript developers.
+- The default page is "default.asp" (see web.config). 
+
 The script was tested on Windows 2019 (Amazon AWS) & 2022 (Azure) Server and on a local IIS8 (Windows 10). 
 
-The default page is "default.asp". 
+
 
 ## Configuration
 Default.asp holds 3 configurational settings:
