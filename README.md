@@ -24,9 +24,9 @@ This script takes 3 parameters (both request.querystring and request.form are su
 - filename (name of the pdffile that will be exported)
 - url (website to convert to pdf) OR html (html code to convert to PDF)
 
-## Example
+## Examples
 In this first example a PDF of www.google.com will be generated:
-```VBSCRIPT
+```ASP
 <!-- #include file="asplite/asplite.asp"-->
 <%
 dim url : url="https://url-to-your-installation"
@@ -34,6 +34,30 @@ dim url : url="https://url-to-your-installation"
 dim data : data="pw=XXXXXX"
 data=data & "&filename=export.pdf"
 data=data & "&url=" & server.urlencode("https://www.google.com") 
+
+dim oXMLHTTP : set oXMLHTTP = Server.CreateObject("Msxml2.ServerXMLHTTP")
+oXMLHTTP.open "POST", url
+oXMLHTTP.setRequestHeader "Content-type", "application/x-www-form-urlencoded;charset=utf-8"
+oXMLHTTP.send data
+
+Response.ContentType = "application/pdf"
+Response.AddHeader "Content-Disposition", "attachment; filename=export.pdf"
+response.binarywrite oXMLHTTP.responseBody
+set oXMLHTTP=nothing
+%>
+```
+In this second example a PDF of a HTML-snippet will be generated:
+
+```ASP
+<!-- #include file="asplite/asplite.asp"-->
+<%
+dim url : url="https://url-to-your-installation"
+
+dim html : html="<strong>Just testing</strong>. Is this <i>working</i>?"
+
+dim data : data="pw=XXXXXX"
+data=data & "&filename=export.pdf"
+data=data & "&html=" & server.urlencode(html)
 
 dim oXMLHTTP : set oXMLHTTP = Server.CreateObject("Msxml2.ServerXMLHTTP")
 oXMLHTTP.open "POST", url
