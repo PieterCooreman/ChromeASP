@@ -1,5 +1,5 @@
 # ChromeASP
-Headless Chrome.exe used as a PDF generator in classic ASP/VBScript
+Headless Chrome.exe used as a PDF/JPG generator in classic ASP/VBScript
 ## Intro
 Classic ASP/VBScript developers never had an easy (and free) way to generate PDF and/or JPG/PNG files. This ASP script uses headless Chrome to get the job done. Chrome converts both websites (urls) and html-snippets to pdf and/or jpg (screenshot). 
 ## System requirements
