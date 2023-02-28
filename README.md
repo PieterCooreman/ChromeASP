@@ -17,3 +17,9 @@ This script takes 3 parameters (both request.querystring and request.form are su
 - pw (password)
 - filename (name of the pdffile)
 - url (website to convert to pdf) OR html (html code to convert to PDF)
+
+## Configuration
+Default.asp holds 3 configurational settings:
+- pw : use this to "secure" your pdf-creation service. you don't want everyone to be able to use your server as a PDF-creator.
+- chromepath : the full path to your chrome.exe installation (without the "chrome.exe")
+- chromeuserdatadir : the full path to a directory (you have to create it yourself) where headless Chrome needs to store specific logs and debug
