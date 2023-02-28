@@ -80,7 +80,7 @@ response.binarywrite oXMLHTTP.responseBody
 set oXMLHTTP=nothing
 %>
 ```
-In this third example a JPG-screenshot of www.google.com will be created:
+In this third example a JPG-screenshot of www.google.com will be created. You can also convert any html-snippet to png/jpg. Make sure to use the widht and height parameters.
 
 ```ASP
 <!-- #include file="asplite/asplite.asp"-->
