@@ -135,7 +135,7 @@ function geturl
 	if lcase(aspl.convertStr(request.servervariables("HTTPS")))="on" then
 		geturl="https://"
 	else
-		geturl="https://"
+		geturl="http://"
 	end if
 	
 	geturl=geturl & request.servervariables("HTTP_HOST") & replace(request.servervariables("SCRIPT_NAME"),"/default.asp","",1,-1,1)
