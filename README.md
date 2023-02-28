@@ -26,7 +26,7 @@ This script takes 3 parameters (both request.querystring and request.form are su
 
 ## Example
 In this first example a PDF of www.google.com will be generated:
-
+```VBSCRIPT
 <!-- #include file="asplite/asplite.asp"-->
 <%
 dim url
@@ -46,3 +46,4 @@ Response.AddHeader "Content-Disposition", "attachment; filename=export.pdf"
 response.binarywrite oXMLHTTP.responseBody
 set oXMLHTTP=nothing
 %>
+```
