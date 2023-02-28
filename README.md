@@ -10,7 +10,9 @@ Some things to keep in mind:
 
 The script was tested on Windows 2019 (Amazon AWS) & 2022 (Azure) Server and on a local IIS8 (Windows 10). 
 
-The default page is "default.asp". This script takes 3 parameters (both request.querystring and request.form are supported):
+The default page is "default.asp". 
+
+This script takes 3 parameters (both request.querystring and request.form are supported):
 
 - pw (password)
 - filename (name of the pdffile)
