@@ -23,11 +23,13 @@ Default.asp holds 3 configurational settings:
 - chromeuserdatadir : the full path to a directory (you have to create it yourself) where headless Chrome needs to store specific logs and debug
 
 ## Usage
-This script takes 4 parameters (both request.querystring and request.form are supported):
+This script takes 6 parameters (both request.querystring and request.form are supported):
 
 - pw (password - needs to correspond to the password you set in the configuration area in default.asp)
 - filename (name of the pdffile that will be exported)
 - filetype ("pdf","jpg" or "png")
+- width (only for screenshot png+jpg)
+- height (only for screenshot png+jpg)
 - url (website to convert to pdf/jpg/png) OR html (html code to convert to pdf/jpg/png)
 
 ## Examples
