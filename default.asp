@@ -5,12 +5,14 @@
 
 'pw=password
 'filename=name of the pdffile
+'filetype=pdf/jpg/png
 'OR parameter url (complete url)
 'OR parameter html (full html code)
 
 '#############################################################################
 '##### START CONFIG AREA
 '#############################################################################
+
 dim pw : pw="XXXXXX" 'replace this!
 dim chromepath : chromepath="C:\Program Files (x86)\Google\Chrome\Application"
 dim chromeuserdatadir : chromeuserdatadir="C:\inetpub\wwwroot\ChromeUser"
@@ -19,9 +21,16 @@ dim chromeuserdatadir : chromeuserdatadir="C:\inetpub\wwwroot\ChromeUser"
 '##### END CONFIG AREA
 '#############################################################################
 
+dim filetype
+select case lcase(aspl.getRequest("filetype"))
+	case "pdf" : filetype="pdf"
+	case "jpg" : filetype="jpg"
+	case "png" : filetype="png"
+end select
+
 dim randomNr : randomNr=round(aspl.randomizer.randomNumber(1,999),0)
 
-dim iFileN : iFileN="output" & randomNr & ".pdf"
+dim iFileN : iFileN="output" & randomNr & "." & filetype
 
 dim link,fileN,html
 
@@ -44,11 +53,11 @@ end if
 
 dim command : command="cmd /k cd " & chromepath
 
-'export as PDF
-command=command & " && chrome.exe --user-data-dir=" & chromeuserdatadir & " --headless --disable-gpu --print-to-pdf=" & server.mappath(iFileN) & " " & link
-
-'make a screenshot
-'command=command & "&& chrome.exe --user-data-dir=D:\Chrome --headless --disable-gpu --screenshot=" & server.mappath("screenshot.jpg") & " --window-size=1920,1920 " & link
+'export as PDF or PNG/JPG
+select case filetype
+	case "pdf" : command=command & " && chrome.exe --user-data-dir=" & chromeuserdatadir & " --headless --disable-gpu --print-to-pdf=" & server.mappath(iFileN) & " " & link
+	case "png","jpg" : command=command & " && chrome.exe --user-data-dir=" & chromeuserdatadir & " --headless --disable-gpu --screenshot=" & server.mappath(iFileN) & " --window-size=1920,1080 " & link
+end select
 
 command=command & " && exit "
 
@@ -82,14 +91,11 @@ function dumpBinary (byval path,dumpAs)
 	
 	'retrieve filename
 	dim filename
-	if dumpAs<>"" then
-		if lcase(right(dumpAs,3))<>"pdf" then dumpAs=dumpAs & ".pdf"
-		filename=dumpAs
-	else
-		filename=right(path,len(path)-InStrRev(path,"\",-1,1))
-	end if			  
-
-	response.ContentType="application/pdf"
+	select case filetype
+		case "pdf" : filename=dumpAs & ".pdf" : response.ContentType="application/pdf"
+		case "png" : filename=dumpAs & ".png" : response.ContentType="image/png"
+		case "jpg" : filename=dumpAs & ".jpg" : response.ContentType="image/jpeg"
+	end select	
 		
 	response.clear
 
