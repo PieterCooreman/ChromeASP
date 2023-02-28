@@ -29,8 +29,7 @@ In this first example a PDF of www.google.com will be generated:
 ```VBSCRIPT
 <!-- #include file="asplite/asplite.asp"-->
 <%
-dim url
-url="https://url-to-your-installation"
+dim url : url="https://url-to-your-installation"
 
 dim data : data="pw=XXXXXX"
 data=data & "&filename=export.pdf"
