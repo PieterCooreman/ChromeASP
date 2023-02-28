@@ -6,6 +6,8 @@
 'pw=password
 'filename=name of the pdffile
 'filetype=pdf/jpg/png
+'width=width for screenshot (only for png/jpg)
+'height=height for screenshot (only for png/jpg)
 'OR parameter url (complete url)
 'OR parameter html (full html code)
 
@@ -27,6 +29,18 @@ select case lcase(aspl.getRequest("filetype"))
 	case "jpg" : filetype="jpg"
 	case "png" : filetype="png"
 end select
+
+dim filewidth, fileheight
+if aspl.convertNmbr(aspl.getRequest("height"))<>0 then
+	fileheight=aspl.convertNmbr(aspl.getRequest("height"))
+else
+	fileheight=1080	
+end if
+if aspl.convertNmbr(aspl.getRequest("width"))<>0 then
+	filewidth=aspl.convertNmbr(aspl.getRequest("width"))
+else
+	filewidth=1920	
+end if
 
 dim randomNr : randomNr=round(aspl.randomizer.randomNumber(1,999),0)
 
@@ -56,7 +70,7 @@ dim command : command="cmd /k cd " & chromepath
 'export as PDF or PNG/JPG
 select case filetype
 	case "pdf" : command=command & " && chrome.exe --user-data-dir=" & chromeuserdatadir & " --headless --disable-gpu --print-to-pdf=" & server.mappath(iFileN) & " " & link
-	case "png","jpg" : command=command & " && chrome.exe --user-data-dir=" & chromeuserdatadir & " --headless --disable-gpu --screenshot=" & server.mappath(iFileN) & " --window-size=1920,1080 " & link
+	case "png","jpg" : command=command & " && chrome.exe --user-data-dir=" & chromeuserdatadir & " --headless --disable-gpu --screenshot=" & server.mappath(iFileN) & " --window-size="&filewidth&","&fileheight&" " & link
 end select
 
 command=command & " && exit "
