@@ -11,7 +11,7 @@
 '#############################################################################
 '##### START CONFIG AREA
 '#############################################################################
-dim pw : pw="3s2nAppA"
+dim pw : pw="XXXXXX" 'replace this!
 dim chromepath : chromepath="C:\Program Files (x86)\Google\Chrome\Application"
 dim chromeuserdatadir : chromeuserdatadir="C:\inetpub\wwwroot\ChromeUser"
 
