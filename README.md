@@ -35,7 +35,7 @@ In this first example a PDF of www.google.com will be generated:
 ```ASP
 <!-- #include file="asplite/asplite.asp"-->
 <%
-dim url : url="http://localhost"
+dim url : url="http://localhost" 'url to where your script is located!
 
 dim data : data="pw=XXXXXX"
 data=data & "&filename=export"
@@ -58,7 +58,7 @@ In this second example a PDF of a HTML-snippet will be generated:
 ```ASP
 <!-- #include file="asplite/asplite.asp"-->
 <%
-dim url : url="http://localhost"
+dim url : url="http://localhost" 'url to where your script is located!
 
 dim html : html="<strong>Just testing</strong>. Is this <i>working</i>?"
 
@@ -83,7 +83,7 @@ In this third example a JPG-screenshot of www.google.com will be created:
 ```ASP
 <!-- #include file="asplite/asplite.asp"-->
 <%
-dim url : url="http://localhost"
+dim url : url="http://localhost" 'url to where your script is located!
 
 dim data : data="pw=XXXXXX"
 data=data & "&filename=export"
