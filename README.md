@@ -7,12 +7,11 @@ Classic ASP/VBScript developers never had an easy (and free) way to generate PDF
 This script will most likely not work on any shared hosting environment. It will only be useful in case you run your own Windows OS (server or localhost).
 
 - You need Chrome installed on your PC/Server
-- IUSR (or Everyone) needs full permissions on Chrome.exe file
-- You have to create a folder on your system where Chrome stores logs/debugs - make sure to give IUSR permissions too
+- Create a folder on your system where Chrome stores logs/debugs
 - Requires aspLite, a light-weight framework for ASP/VBScript developers.
 - The default page is "default.asp" (see web.config). 
 
-The script was tested on Windows 2019 (Amazon AWS) & 2022 (Azure) Server and on a local IIS8 (Windows 10). It also works on IIS Express (Webmatrix, Visual Studio Code, etc).
+The script was tested on Windows 2019 (Amazon AWS) & 2022 (Azure) Servers, on a local IIS8 (Windows 10) and on IIS Express (Webmatrix, Visual Studio Code, etc).
 
 
 
