@@ -12,7 +12,7 @@ This script will most likely not work on any shared hosting environment. It will
 - Requires aspLite, a light-weight framework for ASP/VBScript developers.
 - The default page is "default.asp" (see web.config). 
 
-The script was tested on Windows 2019 (Amazon AWS) & 2022 (Azure) Server and on a local IIS8 (Windows 10). 
+The script was tested on Windows 2019 (Amazon AWS) & 2022 (Azure) Server and on a local IIS8 (Windows 10). It also works on IIS Express (Webmatrix, Visual Studio Code, etc).
 
 
 
