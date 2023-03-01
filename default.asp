@@ -28,6 +28,7 @@ select case lcase(aspl.getRequest("filetype"))
 	case "pdf" : filetype="pdf"
 	case "jpg" : filetype="jpg"
 	case "png" : filetype="png"
+	case else : filetype="pdf" 'default
 end select
 
 dim filewidth, fileheight
