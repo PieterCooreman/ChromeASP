@@ -49,7 +49,7 @@ dim command : command="cmd /k cd " & chromepath
 
 'export as PDF or PNG/JPG
 select case filetype
-	case "pdf" : command=command & " && chrome.exe --user-data-dir=" & chromeuserdatadir & " --headless --disable-gpu --print-to-pdf=" & server.mappath(iFileN) & " " & link
+	case "pdf" : command=command & " && chrome.exe --user-data-dir=" & chromeuserdatadir & " --headless --disable-gpu --print-to-pdf-no-header --print-to-pdf=" & server.mappath(iFileN) & " " & link
 	case "png","jpg" : command=command & " && chrome.exe --user-data-dir=" & chromeuserdatadir & " --headless --disable-gpu --screenshot=" & server.mappath(iFileN) & " --window-size="&filewidth&","&fileheight&" " & link
 end select
 
