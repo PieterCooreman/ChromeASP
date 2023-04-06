@@ -38,6 +38,7 @@ td {
 	<tr>
 		<td valign="top" align="center" style="background-color:#e76f51;height:5%">
 		Lorem ipsum dolor sit amet
+		<img src="http://pdf.asplite.com/logoquickersite.png" style="float:right;margin-right:20px;width:100px;margin-top:-58px" alt="" />
 		</td>
 	</tr>
 </table>
