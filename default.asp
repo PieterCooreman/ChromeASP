@@ -20,6 +20,7 @@
 			<li class="list-group-item"><a href="test2.asp">Test 2: convert html to pdf</a></li>
 			<li class="list-group-item"><a href="test3.asp">Test 3: convert google.com to jpg</a></li>
 			<li class="list-group-item"><a href="test4.asp">Test 4: convert html to jpg</a></li>
+			<li class="list-group-item"><a href="test5.asp">Test 5: create a flyer</a></li>
 		</ul>
 		
 	</div>
