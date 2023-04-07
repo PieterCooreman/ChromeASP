@@ -1,10 +1,10 @@
 <!-- #include file="chromeASP/asplite/asplite.asp"-->
 <%
-dim url : url="http://pdf.asplite.com/chromeASP/pdf.asp" 'url to where your script is located!
+dim url : url="http://localhost/chromeASP/pdf.asp" 'url to where your script is located!
 
 dim html : html=aspl.loadText("test5.txt")
 
-dim data : data="pw=hjyuksqvdfsgdfguju"
+dim data : data="pw=XXXXXX"
 data=data & "&filename=export"
 data=data & "&filetype=pdf"
 data=data & "&html=" & server.urlencode(html)
